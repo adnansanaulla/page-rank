@@ -1,9 +1,8 @@
 #include <catch2/catch_test_macros.hpp>
 #include <iostream>
-
-// change if you choose to use a different header name
 #include "AdjacencyList.h"
-
+//Name: Adnan Sanaulla
+//UF ID: 87197603
 using namespace std;
 
 // the syntax for defining a test is below. It is important for the name to be
