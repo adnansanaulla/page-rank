@@ -23,6 +23,6 @@ int main() {
             Created_Graph.adjacencyList[from] = {};
         }
     }
-    //Create a graph object
+    //Create a graph
     Created_Graph.PageRank(power_iterations);
 }
