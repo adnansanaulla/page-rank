@@ -7,15 +7,19 @@
 using namespace std;
 
 class AdjacencyList {
-    private:
-    int powerIterations;
     public:
-    //Think about what helper functions you will need in the algorithm
-    unordered_map<string, vector<string>> adjacencyList;
+    // adjacency list that contains the in degrees
+    unordered_map<int, vector<int>> adjacencyList;
+    // vector that has the amount of outdegrees
+    vector<int> outdegrees;
+    // map that maps website to number
+    unordered_map<string, int> mappar;
+    // map that reverses that
+    unordered_map<int, string> reverse_mappar;
+    // constructor
     AdjacencyList();
-    int GetVertices();
-    int GetEdges();
-    void PageRank(int n);
+    // adds vertex
+    void AddVertex(string to, string from, int& j);
+    // outputs pages ranked
+    string PageRank(int n);
 };
-
-// This class and method are optional.

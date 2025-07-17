@@ -1,23 +1,67 @@
 #include <catch2/catch_test_macros.hpp>
 #include <iostream>
+#include <sstream>
 #include "AdjacencyList.h"
 //Name: Adnan Sanaulla
 //UF ID: 87197603
 using namespace std;
 
+
 // the syntax for defining a test is below. It is important for the name to be
 // unique, but you can group multiple tests with [tags]. A test can have
 // [multiple][tags] using that syntax.
 TEST_CASE("Example Test Name - Change me!", "[tag]") {
-  // instantiate any class members that you need to test here
-  int one = 1;
+  AdjacencyList Created_Graph;
+  string testInput = R"(14 11
+facebook.com weather.com
+zoom.us apple.com
+pcbuildinguf.com microsoft.com
+apple.com zoom.us
+ufl.edu roblox.com
+getbootstrap.com twitter.com
+facebook.com stackoverflow.com
+reactjs.org microsoft.com
+openai.com twitter.com
+chase.com weather.com
+roblox.com samsung.com
+stackoverflow.com zoom.us
+wikipedia.org reactjs.org
+pcbuildinguf.com twitter.com
+)";
 
-  // anything that evaluates to false in a REQUIRE block will result in a
-  // failing test
-  REQUIRE(one == 0); // fix me!
+  string correctAnswer = R"(apple.com 0.13
+chase.com 0.00
+facebook.com 0.00
+getbootstrap.com 0.00
+microsoft.com 0.00
+openai.com 0.00
+pcbuildinguf.com 0.00
+reactjs.org 0.00
+roblox.com 0.00
+samsung.com 0.00
+stackoverflow.com 0.00
+twitter.com 0.00
+ufl.edu 0.00
+weather.com 0.00
+wikipedia.org 0.00
+zoom.us 0.09)";
 
-  // all REQUIRE blocks must evaluate to true for the whole test to pass
-  REQUIRE(false); // also fix me!
+  stringstream ss(testInput);
+  int lines;
+  int powerIterations;
+  ss >> lines >> powerIterations;
+  string from, to;
+  int j = 0;
+  for (int i = 0; i < lines; i++) {
+    string line;
+    getline(ss, line);
+    istringstream in(line);
+    ss >> from;
+    ss >> to;
+    cout << "Edge: " << from << " → " << to << endl;
+    Created_Graph.AddVertex(to, from, j);
+  }
+  REQUIRE(Created_Graph.PageRank(powerIterations) == correctAnswer);
 }
 
 TEST_CASE("Test 2", "[tag]") {

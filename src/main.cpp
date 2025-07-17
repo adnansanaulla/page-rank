@@ -18,11 +18,8 @@ int main() {
         istringstream in(line);
         cin >> from;
         cin >> to;
-        Created_Graph.adjacencyList[to].push_back(from);
-        if (Created_Graph.adjacencyList.find(from) == Created_Graph.adjacencyList.end()) {
-            Created_Graph.adjacencyList[from] = {};
-        }
+        Created_Graph.AddVertex(to, from, j);
     }
-    //Create a graph
+    //Outputs the pagerank
     Created_Graph.PageRank(power_iterations);
 }
