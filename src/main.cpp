@@ -4,7 +4,7 @@
 #include "AdjacencyList.h"
 
 using namespace std;
-
+//main method
 int main() {
     int no_of_lines, power_iterations;
     string from, to;
