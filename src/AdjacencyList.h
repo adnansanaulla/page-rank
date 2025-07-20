@@ -8,7 +8,7 @@ using namespace std;
 //header file
 class AdjacencyList {
     public:
-    // adjacency list that contains the in degrees
+    // adjacency list that contains the indegrees
     unordered_map<int, vector<int>> adjacencyList;
     // vector that has the amount of outdegrees
     vector<int> outdegrees;
