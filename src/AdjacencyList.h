@@ -12,7 +12,7 @@ class AdjacencyList {
     unordered_map<int, vector<int>> adjacencyList;
     // vector that has the amount of outdegrees
     vector<int> outdegrees;
-    // map that maps website to number
+    // map that maps websites to numbers
     unordered_map<string, int> mappar;
     // map that reverses that
     unordered_map<int, string> reverse_mappar;
