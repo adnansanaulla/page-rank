@@ -14,7 +14,7 @@ class AdjacencyList {
     vector<int> outdegrees;
     // map that maps websites to numbers
     unordered_map<string, int> mappar;
-    // map that reverses that
+    // map that reverses that (maps numbers to websites)
     unordered_map<int, string> reverse_mappar;
     // constructor
     AdjacencyList();
