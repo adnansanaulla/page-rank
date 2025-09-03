@@ -81,7 +81,8 @@ string AdjacencyList::PageRank(int n)
         temp = ranks[websites[i].second];
         ss << fixed << showpoint;
         ss << setprecision(2);
-        ss << websites[i].first << " " << temp;
+        ss << websites[i].first;
+        ss << " " << temp;
         if (i != websites.size() - 1)
         {
             ss << endl;
